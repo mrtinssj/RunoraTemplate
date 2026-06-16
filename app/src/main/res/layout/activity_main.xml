@@ -3,36 +3,278 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical">
+    android:background="@drawable/bg_tela"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingTop="2dp"
+    android:paddingBottom="30dp">
 
+    <!-- Ícone superior -->
+    <TextView
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/bg_circulo_escuro"
+        android:gravity="center"
+        android:text="🏃"
+        android:textSize="12sp" />
+
+    <!-- Texto TEMPO -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="TEMPO"
+        android:textColor="#9BA6AA"
+        android:textSize="8sp"
+        android:letterSpacing="0.08" />
+
+    <!-- Timer principal -->
     <TextView
         android:id="@+id/txtTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Titulo"
-        android:textSize="18sp"
+        android:text="00:00:00"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginTop="0dp" />
 
+    <!-- Área de informações -->
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:layout_marginTop="6dp">
 
-        <Button
-            android:id="@+id/btnPlay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Play"/>
+        <!-- Linha 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btnStop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Stop"
-            android:layout_marginStart="8dp"/>
+            <!-- Distância -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:padding="2dp">
 
+                <TextView
+                    android:layout_width="13dp"
+                    android:layout_height="match_parent"
+                    android:text="⌖"
+                    android:textColor="#00E060"
+                    android:textSize="12sp"
+                    android:gravity="top|center_horizontal" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:text="DISTÂNCIA"
+                        android:textColor="#8D999E"
+                        android:textSize="5sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:text="0.00"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:text="km"
+                        android:textColor="#8D999E"
+                        android:textSize="6sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#13262E" />
+
+            <!-- Ritmo -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:padding="2dp">
+
+                <TextView
+                    android:layout_width="13dp"
+                    android:layout_height="match_parent"
+                    android:text="↻"
+                    android:textColor="#00E060"
+                    android:textSize="12sp"
+                    android:gravity="top|center_horizontal" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:text="RITMO"
+                        android:textColor="#8D999E"
+                        android:textSize="5sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:text="0:00"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:text="min/km"
+                        android:textColor="#8D999E"
+                        android:textSize="6sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#13262E" />
+
+        <!-- Linha 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+
+            <!-- Calorias -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:padding="2dp">
+
+                <TextView
+                    android:layout_width="13dp"
+                    android:layout_height="match_parent"
+                    android:text="♨"
+                    android:textColor="#00E060"
+                    android:textSize="12sp"
+                    android:gravity="top|center_horizontal" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:text="CALORIAS"
+                        android:textColor="#8D999E"
+                        android:textSize="5sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:text="0"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:text="kcal"
+                        android:textColor="#8D999E"
+                        android:textSize="6sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#13262E" />
+
+            <!-- Frequência Cardíaca -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:padding="2dp">
+
+                <TextView
+                    android:layout_width="13dp"
+                    android:layout_height="match_parent"
+                    android:text="♡"
+                    android:textColor="#00E060"
+                    android:textSize="12sp"
+                    android:gravity="top|center_horizontal" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:text="FREQ. CARDÍACA"
+                        android:textColor="#8D999E"
+                        android:textSize="4sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:text="--"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:text="bpm"
+                        android:textColor="#8D999E"
+                        android:textSize="6sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
+
+    <!-- Botão Play mais para cima -->
+    <ImageButton
+        android:id="@+id/btnPlay"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/bg_botao_play"
+        android:src="@drawable/ic_play"
+        android:scaleType="center"
+        android:padding="12dp"
+        android:contentDescription="Play" />
+
+    <!-- Botão Stop escondido -->
+    <Button
+        android:id="@+id/btnStop"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:text="Stop" />
 
 </LinearLayout>
