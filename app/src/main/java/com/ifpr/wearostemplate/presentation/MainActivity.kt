@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.google.firebase.database.FirebaseDatabase
 
@@ -33,12 +34,31 @@ class MainActivity : ComponentActivity() {
             val intent = Intent(this@MainActivity, PerfilActivity::class.java)
             startActivity(intent)
         }
-
         val btnStop = findViewById<Button>(R.id.btnStop)
+        btnStop.visibility = View.GONE
+
+
+        val btnPlay = findViewById<ImageButton>(R.id.btnPlay)
+        btnPlay.setOnClickListener {
+            if (btnPlay.visibility == View.VISIBLE) {
+                btnPlay.visibility = View.GONE
+                btnStop.visibility = View.VISIBLE
+            } else {
+                btnPlay.visibility = View.VISIBLE
+                btnStop.visibility = View.GONE
+            }
+            Toast.makeText(this, "Iniciando corrida...", Toast.LENGTH_SHORT).show()
+        }
+
         btnStop.setOnClickListener {
             val distanciaKm = 2.5
             val tempoSegundos = 900L
             salvarCorrida(distanciaKm, tempoSegundos)
+
+            // Volta para o estado inicial: play visível, stop oculto
+            btnStop.visibility = View.GONE
+            btnPlay.visibility = View.VISIBLE
+
             Toast.makeText(this, "Corrida salva!", Toast.LENGTH_SHORT).show()
         }
     }

@@ -271,10 +271,15 @@
         <!-- Botão Stop escondido -->
         <Button
             android:id="@+id/btnStop"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:text="Stop"
-            android:visibility="gone" />
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:text="■"
+            android:background="@drawable/bg_botao_play"
+            android:contentDescription="Stop"
+            android:padding="6dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_play"
+             />
 
     </LinearLayout>
 
